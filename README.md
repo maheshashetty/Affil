@@ -37,23 +37,20 @@
    npm run dev
    ```
 
-### Deployment
+### Netlify Deployment
 
-This project is configured to deploy to **GitHub Pages** automatically via GitHub Actions.
+1. **Option A: Connect to GitHub (Recommended)**
+   - Log in to [Netlify](https://app.netlify.com/).
+   - Click **Add new site** > **Import from an existing project**.
+   - Select your GitHub repository.
+   - The settings in `netlify.toml` will automatically configure the build command and publish directory.
+   - In **Environment variables**, add `GEMINI_API_KEY` with your key.
 
-1. Export this project to a new GitHub repository using the **"Export to GitHub"** button in Google AI Studio.
-2. In your GitHub repository settings:
-   - Go to **Settings > Pages**.
-   - Under **Build and deployment > Source**, select **GitHub Actions**.
-3. Push your changes to the `main` branch, and the site will deploy automatically!
+2. **Option B: Manual Drag & Drop**
+   - Run `npm run build` locally.
+   - Drag the `dist/` folder into the Netlify Drop area.
 
-**Note:** If your site is hosted at `username.github.io/repo-name/`, you may need to update the `base` property in `vite.config.ts`:
-```typescript
-export default defineConfig({
-  base: '/repo-name/',
-  // ... rest of config
-})
-```
+**Note:** The `netlify.toml` file handles the React Router redirection logic to ensure deep links (e.g., `/review/xyz`) work correctly on reload.
 
 ## 📜 License
 
