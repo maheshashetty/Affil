@@ -12,6 +12,8 @@ import { CategoryPage, DealsPage } from './pages/ExtraPages';
 import { BuyingGuidePage } from './pages/BuyingGuidePage';
 import { AboutPage, DisclosurePage, AdminDashboard } from './pages/StaticPages';
 import { LaunchChecklist } from './components/LaunchChecklist';
+import { AboutPage, DisclosurePage, AdminDashboard } from './pages/StaticPages';
+import { LaunchChecklist } from './components/LaunchChecklist';
 
 /**
  * ScrollToTop helper component to reset scroll position on route changes.
@@ -39,6 +41,10 @@ export default function App() {
             <Route path="/review/:slug" element={<ProductReviewPage />} />
             <Route path="/best-of-2025" element={<BuyingGuidePage />} />
             <Route path="/deals" element={<DealsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/disclosure" element={<DisclosurePage />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/launch-checklist" element={<LaunchChecklist />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/disclosure" element={<DisclosurePage />} />
             <Route path="/admin" element={<AdminDashboard />} />
